@@ -321,7 +321,11 @@
     $$("[data-wa]").forEach((a) => { a.href = wa(MESSAGES[a.dataset.wa] || MESSAGES.general); });
     $$("[data-numero]").forEach((el) => { el.textContent = BOUTIQUE.whatsappAffiche; });
     $("#adresse").textContent = BOUTIQUE.adresse ? BOUTIQUE.adresse + ", " + BOUTIQUE.ville : BOUTIQUE.ville;
-    if (/^https:\/\//i.test(BOUTIQUE.lienCarte || "")) { const lien = $("#lien-carte"); lien.href = BOUTIQUE.lienCarte; lien.hidden = false; }
+    if (/^https:\/\//i.test(BOUTIQUE.lienCarte || "")) {
+      const lien = $("#lien-carte"); lien.href = BOUTIQUE.lienCarte; lien.hidden = false;
+      // La position est sur la carte : plus besoin de la demander sur WhatsApp.
+      $$('.contact-actions [data-wa="localisation"]').forEach((a) => { a.hidden = true; });
+    }
     $("#annee").textContent = new Date().getFullYear();
     const photos = BOUTIQUE.photos || {};
     $("#photos").innerHTML = (photos.boutique || []).map((f) => '<figure class="photo">' + (f.fichier ? '<img src="' + esc(f.fichier) + '" alt="' + esc(f.legende) + '" loading="lazy" decoding="async">' : photoVide(f.legende)) + "</figure>").join("");

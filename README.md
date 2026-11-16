@@ -23,7 +23,7 @@ La photo remplace le dessin de l'article. C'est le même principe pour la grande
 
 - Les articles du catalogue sont des exemples construits sur les rayons de la boutique : remplacez-les par les vrais articles.
 - Les horaires sont des exemples, affichés comme « indicatifs ». Une fois les vrais horaires saisis, mettez `horairesAConfirmer: false` : le site affiche alors « Ouvert » ou « Fermé » en direct.
-- L'adresse (`adresse`) et le lien Google Maps (`lienCarte`) sont vides.
+- L'adresse écrite (`adresse`) est vide : ajoutez le quartier et un repère. La position GPS de la boutique est déjà sur la carte (`lienCarte`).
 
 ## Fichiers
 

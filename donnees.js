@@ -14,7 +14,9 @@ const BOUTIQUE = {
   whatsappAffiche: "+228 71 65 45 15",  // le numéro tel qu'il s'affiche sur le site
   ville: "Lomé, Togo",
   adresse: "",                          // ex. "Quartier …, à côté de …" (laisser "" tant que ce n'est pas prêt)
-  lienCarte: "",                        // lien Google Maps de la boutique, commençant par https:// (facultatif)
+  // Lien Google Maps de la boutique (position GPS : 6.225781422225011, 1.179715380224953).
+  // Il affiche le bouton « Voir sur la carte ». Doit commencer par https://
+  lienCarte: "https://www.google.com/maps/search/?api=1&query=6.225781422225011%2C1.179715380224953",
 
   // Horaires : ["ouverture", "fermeture"] sur 24 h, ou null si la boutique est fermée ce jour-là.
   horaires: {
