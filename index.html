@@ -3,6 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Sécurité : la page n'exécute que ses propres fichiers. Pour ajouter un service externe
+     (statistiques, carte, etc.), il faudra l'autoriser dans la ligne ci-dessous. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>HF Boutique · Mode Homme &amp; Femme à Lomé</title>
 <meta name="description" content="HF Boutique (Homme &amp; Femme) : prêt-à-porter moderne, chaussures et accessoires de mode à Lomé. Commande sur WhatsApp, livraison à domicile, paiement à la livraison, par Flooz ou par T-Money.">
 <meta name="theme-color" content="#FDFDFC">
