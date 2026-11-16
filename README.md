@@ -3,7 +3,7 @@
 Site de HF Boutique (Homme & Femme) : prêt-à-porter moderne, chaussures et accessoires de mode à Lomé.
 Les commandes se font sur WhatsApp au +228 71 65 45 15, avec un message déjà rédigé pour chaque article.
 
-Site en ligne : https://michel190.github.io/hf-boutique/
+Site en ligne : https://michel190.github.io/HF-boutique/
 
 ## Modifier le contenu
 
