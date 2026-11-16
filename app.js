@@ -397,6 +397,23 @@
   }
   window.addEventListener("scroll", () => { if (!enAttente) { enAttente = true; requestAnimationFrame(majOnglets); } }, { passive: true });
 
+  /* ---------- Relief au survol : le vêtement suit la souris (ordinateur uniquement) ---------- */
+  if (window.matchMedia("(hover: hover) and (pointer: fine)").matches && !mouvementReduit) {
+    let survol = null;
+    const remettre = (el) => { if (el) { el.style.removeProperty("--rx"); el.style.removeProperty("--ry"); } };
+    document.addEventListener("pointermove", (e) => {
+      const bloc = e.target.closest && e.target.closest(".carte, .fiche-visuel");
+      const zone = bloc && (bloc.classList.contains("fiche-visuel") ? bloc : $(".carte-visuel", bloc));
+      const r = zone && zone.getBoundingClientRect();
+      const dedans = !!r && e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom && !$("img", zone);
+      if (zone !== survol || !dedans) { remettre(survol); survol = dedans ? zone : null; }
+      if (!dedans) return;
+      zone.style.setProperty("--ry", (((e.clientX - r.left) / r.width - 0.5) * 16).toFixed(2) + "deg");
+      zone.style.setProperty("--rx", ((0.5 - (e.clientY - r.top) / r.height) * 11).toFixed(2) + "deg");
+    }, { passive: true });
+    document.documentElement.addEventListener("pointerleave", () => { remettre(survol); survol = null; });
+  }
+
   /* ---------- Démarrage ---------- */
   rendreBoutique();
   rendreHoraires();
